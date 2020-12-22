@@ -9,7 +9,7 @@
         "prefix": "mjattributes",
         "body": [
             "<mj-attributes>",
-            "\t$1",
+            "\t$0",
             "</mj-attributes>"
         ],
         "description": "MJML Attributes",
@@ -19,7 +19,7 @@
         "prefix": "mjbody",
         "body": [
             "<mj-body>",
-            "\t$1",
+            "\t$0",
             "</mj-body>"
         ],
         "description": "MJML Body",
@@ -35,7 +35,7 @@
         "prefix": "mjbutton",
         "body": [
             "<mj-button>",
-            "\t$1",
+            "\t$0",
             "</mj-button>"
         ],
         "description": "MJML Button",
@@ -45,7 +45,7 @@
         "prefix": "mjcarousel",
         "body": [
             "<mj-carousel>",
-            "\t$1",
+            "\t$0",
             "</mj-carousel>"
         ],
         "description": "MJML Carousel",
@@ -67,7 +67,7 @@
         "prefix": "mjcolumn",
         "body": [
             "<mj-column width=\"$1\">",
-            "\t$2",
+            "\t$0",
             "</mj-column>"
         ],
         "description": "MJML Column",
@@ -89,7 +89,7 @@
         "prefix": "mjgroup",
         "body": [
             "<mj-group>",
-            "\t$1",
+            "\t$0",
             "</mj-group>"
         ],
         "description": "MJML Group",
@@ -99,7 +99,7 @@
         "prefix": "mjhead",
         "body": [
             "<mj-head>",
-            "\t$1",
+            "\t$0",
             "</mj-head>"
         ],
         "description": "MJML Head",
@@ -109,7 +109,7 @@
         "prefix": "mjhero",
         "body": [
             "<mj-hero>",
-            "\t$1",
+            "\t$0",
             "</mj-hero>"
         ],
         "description": "MJML Hero",
@@ -131,7 +131,7 @@
         "prefix": "mjraw",
         "body": [
             "<mj-raw>",
-            "\t$1",
+            "\t$0",
             "</mj-raw>"
         ],
         "description": "MJML Raw",
@@ -141,7 +141,7 @@
         "prefix": "mjsection",
         "body": [
             "<mj-section>",
-            "\t$1",
+            "\t$0",
             "</mj-section>"
         ],
         "description": "MJML Section",
@@ -151,7 +151,7 @@
         "prefix": "mjsocial",
         "body": [
             "<mj-social>",
-            "\t$1",
+            "\t$0",
             "</mj-social>"
         ],
         "description": "MJML Social",
@@ -161,7 +161,7 @@
         "prefix": "mjsocialelement",
         "body": [
             "<mj-social-element>",
-            "\t$1",
+            "\t$0",
             "</mj-social-element>"
         ],
         "description": "MJML Social Element",
@@ -171,7 +171,7 @@
         "prefix": "mjstyle",
         "body": [
             "<mj-style>",
-            "\t$1",
+            "\t$0",
             "</mj-style>"
         ],
         "description": "MJML Style",
@@ -181,7 +181,7 @@
         "prefix": "mjtable",
         "body": [
             "<mj-table>",
-            "\t$1",
+            "\t$0",
             "</mj-table>"
         ],
         "description": "MJML Table",
@@ -191,7 +191,7 @@
         "prefix": "mjtext",
         "body": [
             "<mj-text>",
-            "\t$1",
+            "\t$0",
             "</mj-text>"
         ],
         "description": "MJML Text",
@@ -207,7 +207,7 @@
         "prefix": "mjml",
         "body": [
             "<mjml>",
-            "\t$1",
+            "\t$0",
             "</mjml>"
         ],
         "description": "MJML",
@@ -217,7 +217,7 @@
         "prefix": "mjpreview",
         "body": [
             "<mj-preview>",
-            "\t$1",
+            "\t$0",
             "</mj-preview>"
         ],
         "description": "MJML Preview",
@@ -233,7 +233,7 @@
         "prefix": "mjwrapper",
         "body": [
             "<mj-wrapper>",
-            "\t$1",
+            "\t$0",
             "</mj-wrapper>"
         ],
         "description": "MJML Wrapper",
@@ -243,7 +243,7 @@
         "prefix": "mjaccordion",
         "body": [
             "<mj-accordion>",
-            "\t$1",
+            "\t$0",
             "</mj-accordion>"
         ],
         "description": "MJML Accordion",
@@ -254,7 +254,7 @@
         "body": [
             "<mj-accordion-element>",
             "\t<mj-accordion-title>$1</mj-accordion-title>",
-            "\t<mj-accordion-text>$2</mj-accordion-text>",
+            "\t<mj-accordion-text>$0</mj-accordion-text>",
             "</mj-accordion-element>"
         ],
         "description": "MJML Accordion Element",
@@ -264,7 +264,7 @@
         "prefix": "mjnavbar",
         "body": [
             "<mj-navbar>",
-            "\t$1",
+            "\t$0",
             "</mj-navbar>"
         ],
         "description": "MJML Navbar",
@@ -274,7 +274,7 @@
         "prefix": "mjnavbarlink",
         "body": [
             "<mj-navbar-link>",
-            "\t$1",
+            "\t$0",
             "</mj-navbar-link>"
         ],
         "description": "MJML Navbar Link",
@@ -299,7 +299,7 @@
             "\t<mj-body>",
             "\t\t<mj-section>",
             "\t\t\t<mj-column width=\"$3\">",
-            "\t\t\t\t$4",
+            "\t\t\t\t$0",
             "\t\t\t</mj-column>",
             "\t\t</mj-section>",
             "\t</mj-body>",
