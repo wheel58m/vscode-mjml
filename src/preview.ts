@@ -50,17 +50,29 @@ export default class Preview {
             }),
 
             workspace.onDidChangeTextDocument((event?: TextDocumentChangeEvent) => {
+                if (!event) return
+
                 if (
-                    event &&
-                    this.previewOpen &&
-                    workspace.getConfiguration('mjml').updateWhenTyping
-                ) {
+                    event.document.fileName !== this.openedDocuments[0] &&
+                    !workspace.getConfiguration('mjml').updateOnSeparateFileChange
+                )
+                    return
+
+                if (this.previewOpen && workspace.getConfiguration('mjml').updateWhenTyping) {
                     this.displayWebView(event.document)
                 }
             }),
 
             workspace.onDidSaveTextDocument((document?: TextDocument) => {
-                if (document && this.previewOpen) {
+                if (!document) return
+
+                if (
+                    document.fileName !== this.openedDocuments[0] &&
+                    !workspace.getConfiguration('mjml').updateOnSeparateFileChange
+                )
+                    return
+
+                if (this.previewOpen) {
                     this.displayWebView(document)
                 }
             }),
