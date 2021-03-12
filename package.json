@@ -198,9 +198,9 @@
                     "description": "Automatically close template gallery when selecting a template.",
                     "type": "boolean"
                 },
-                "mjml.updateOnSeparateFileChange": {
+                "mjml.switchOnSeparateFileChange": {
                     "default": true,
-                    "description": "Automatically update preview when editing a different file.",
+                    "description": "Automatically switch previews when editing a different file.",
                     "type": "boolean"
                 }
             }
