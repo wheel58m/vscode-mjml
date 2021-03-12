@@ -1,12 +1,6 @@
 # MJML
 
-This is a fork of the [@mjmlio extension](https://github.com/mjmlio/vscode-mjml), which itself, is a fork of [the original @attilabuti VSC extension.](https://github.com/attilabuti/vscode-mjml)
-
-## Differences
-
--   `mjml.updateOnSeparateFileChange`: optionally restrict preview to original file used to open it.
-
----
+This is a fork of original @attilabuti VSC extension : (https://github.com/attilabuti/vscode-mjml)[https://github.com/attilabuti/vscode-mjml]
 
 MJML preview, lint, compile for Visual Studio Code.
 
@@ -58,35 +52,34 @@ The following command is available:
 
 ## Settings
 
-| Name                              | Default   | Description                                                                                                       |
-| --------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------- |
-| `mjml.autoPreview`                | `false`   | Automatically update preview when switching between MJML documents.                                               |
-| `mjml.beautifyHtmlOutput`         | `false`   | Beautify HTML output. (Works when `mjml.minifyHtmlOutput` aren't enabled.)                                        |
-| `mjml.beautify`                   | ` `       | Beautify options ([available options](https://github.com/beautify-web/js-beautify#options)).                      |
-| `mjml.exportType`                 | `.html`   | Specifies the file type of the output file.                                                                       |
-| `mjml.lintEnable`                 | `true`    | Enable/disable MJML linter (requires restart).                                                                    |
-| `mjml.lintWhenTyping`             | `true`    | Whether the linter is run on type or on save.                                                                     |
-| `mjml.mailFromName`               | ` `       | Sender name.                                                                                                      |
-| `mjml.mailRecipients`             | ` `       | Comma separated list of recipients email addresses.                                                               |
-| `mjml.mailSender`                 | ` `       | Sender email address. (Mailjet: must be a verified sender.)                                                       |
-| `mjml.mailSubject`                | ` `       | Email subject.                                                                                                    |
-| `mjml.mailer`                     | `mailjet` | Send email with Nodemailer or Mailjet. Possible values are 'nodemailer' and 'mailjet'.                            |
-| `mjml.mailjetAPIKey`              | ` `       | Mailjet API Key.                                                                                                  |
-| `mjml.mailjetAPISecret`           | ` `       | Mailjet API Secret.                                                                                               |
-| `mjml.minifyHtmlOutput`           | `true`    | Minify HTML output.                                                                                               |
-| `mjml.nodemailer`                 | `{}`      | Nodemailer configuration. Please see the [Nodemailer](https://nodemailer.com) documentation for more information. |
-| `mjml.preserveFocus`              | `true`    | Preserve focus of Text Editor after preview open.                                                                 |
-| `mjml.screenshotQuality`          | `75`      | Screenshot quality.                                                                                               |
-| `mjml.screenshotType`             | `jpg`     | Screenshot type. Possible values are 'png', 'jpg', and 'jpeg'.                                                    |
-| `mjml.screenshotWidth`            | `650`     | Screenshot width.                                                                                                 |
-| `mjml.screenshotWidths`           | `640,750` | Screenshot widths.                                                                                                |
-| `mjml.updateWhenTyping`           | `true`    | Update preview when typing.                                                                                       |
-| `mjml.previewBackgroundColor`     | ` `       | Preview background color.                                                                                         |
-| `mjml.autoClosePreview`           | `true`    | Automatically close preview when all open MJML documents have been closed.                                        |
-| `mjml.showSaveDialog`             | `false`   | Show the save as dialog instead of input box.                                                                     |
-| `mjml.templateGallery`            | `false`   | Show the template gallery instead of quick pick.                                                                  |
-| `mjml.templateGalleryAutoClose`   | `true`    | Automatically close template gallery when selecting a template.                                                   |
-| `mjml.updateOnSeparateFileChange` | `true`    | Automatically update preview when editing a different file.                                                       |
+| Name                            | Default   | Description                                                                                                       |
+| ------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------- |
+| `mjml.autoPreview`              | `false`   | Automatically update preview when switching between MJML documents.                                               |
+| `mjml.beautifyHtmlOutput`       | `false`   | Beautify HTML output. (Works when `mjml.minifyHtmlOutput` aren't enabled.)                                        |
+| `mjml.beautify`                 | ` `       | Beautify options ([available options](https://github.com/beautify-web/js-beautify#options)).                      |
+| `mjml.exportType`               | `.html`   | Specifies the file type of the output file.                                                                       |
+| `mjml.lintEnable`               | `true`    | Enable/disable MJML linter (requires restart).                                                                    |
+| `mjml.lintWhenTyping`           | `true`    | Whether the linter is run on type or on save.                                                                     |
+| `mjml.mailFromName`             | ` `       | Sender name.                                                                                                      |
+| `mjml.mailRecipients`           | ` `       | Comma separated list of recipients email addresses.                                                               |
+| `mjml.mailSender`               | ` `       | Sender email address. (Mailjet: must be a verified sender.)                                                       |
+| `mjml.mailSubject`              | ` `       | Email subject.                                                                                                    |
+| `mjml.mailer`                   | `mailjet` | Send email with Nodemailer or Mailjet. Possible values are 'nodemailer' and 'mailjet'.                            |
+| `mjml.mailjetAPIKey`            | ` `       | Mailjet API Key.                                                                                                  |
+| `mjml.mailjetAPISecret`         | ` `       | Mailjet API Secret.                                                                                               |
+| `mjml.minifyHtmlOutput`         | `true`    | Minify HTML output.                                                                                               |
+| `mjml.nodemailer`               | `{}`      | Nodemailer configuration. Please see the [Nodemailer](https://nodemailer.com) documentation for more information. |
+| `mjml.preserveFocus`            | `true`    | Preserve focus of Text Editor after preview open.                                                                 |
+| `mjml.screenshotQuality`        | `75`      | Screenshot quality.                                                                                               |
+| `mjml.screenshotType`           | `jpg`     | Screenshot type. Possible values are 'png', 'jpg', and 'jpeg'.                                                    |
+| `mjml.screenshotWidth`          | `650`     | Screenshot width.                                                                                                 |
+| `mjml.screenshotWidths`         | `640,750` | Screenshot widths.                                                                                                |
+| `mjml.updateWhenTyping`         | `true`    | Update preview when typing.                                                                                       |
+| `mjml.previewBackgroundColor`   | ` `       | Preview background color.                                                                                         |
+| `mjml.autoClosePreview`         | `true`    | Automatically close preview when all open MJML documents have been closed.                                        |
+| `mjml.showSaveDialog`           | `false`   | Show the save as dialog instead of input box.                                                                     |
+| `mjml.templateGallery`          | `false`   | Show the template gallery instead of quick pick.                                                                  |
+| `mjml.templateGalleryAutoClose` | `true`    | Automatically close template gallery when selecting a template.                                                   |
 
 ## Snippets
 
@@ -178,11 +171,11 @@ Please see the [Nodemailer](https://nodemailer.com) documentation for more infor
 
 ## Issues
 
-Submit the [issues](https://github.com/Daniel-Knights/vscode-mjml/issues) if you find any bug or have any suggestion.
+Submit the [issues](https://github.com/attilabuti/vscode-mjml/issues) if you find any bug or have any suggestion.
 
 ## Contribution
 
-Fork the [repo](https://github.com/Daniel-Knights/vscode-mjml) and submit pull requests.
+Fork the [repo](https://github.com/attilabuti/vscode-mjml) and submit pull requests.
 
 ## Contributors
 

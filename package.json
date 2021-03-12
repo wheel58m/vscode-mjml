@@ -1,23 +1,24 @@
 {
     "name": "vscode-mjml",
-    "displayName": "MJML (non-official fork)",
+    "displayName": "MJML",
     "description": "MJML preview, lint, compile for Visual Studio Code.",
-    "version": "0.0.1",
-    "publisher": "DanielKnights",
+    "version": "1.0.4",
+    "publisher": "mjmlio",
     "license": "MIT",
     "readme": "README.md",
     "icon": "images/icon.png",
     "author": {
-        "name": "Daniel Knights",
-        "email": "danknights95@gmail.com"
+        "name": "MJML",
+        "email": "cedric@derniercri.io",
+        "url": "https://mjml.io/"
     },
-    "homepage": "https://github.com/Daniel-Knights/vscode-mjml#readme",
+    "homepage": "https://github.com/mjmlio/vscode-mjml#readme",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Daniel-Knights/vscode-mjml"
+        "url": "https://github.com/mjmlio/vscode-mjml"
     },
     "bugs": {
-        "url": "https://github.com/Daniel-Knights/vscode-mjml/issues"
+        "url": "https://github.com/mjmlio/vscode-mjml/issues"
     },
     "galleryBanner": {
         "color": "#f45e43",
