@@ -1,6 +1,7 @@
 import { ExtensionContext, TextDocument, window, workspace } from 'vscode'
 
 import Beautify from './beautify'
+import Completion from './completion'
 import Copy from './copy'
 import Documentation from './documentation'
 import Email from './email'
@@ -22,6 +23,7 @@ export function activate(extensionContext: ExtensionContext) {
 
     extensionFeatures = [
         new Beautify(context.subscriptions),
+        new Completion(context.subscriptions),
         new Copy(context.subscriptions),
         new Documentation(context),
         new Email(context.subscriptions),
