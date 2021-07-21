@@ -79,6 +79,8 @@ The following command is available:
 | `mjml.showSaveDialog` | `false` | Show the save as dialog instead of input box. |
 | `mjml.templateGallery` | `false` | Show the template gallery instead of quick pick. |
 | `mjml.templateGalleryAutoClose` | `true` | Automatically close template gallery when selecting a template. |
+| `mjml.switchOnSeparateFileChange` | `true` | Automatically switch previews when editing a different file. |
+
 
 ## Snippets
 
