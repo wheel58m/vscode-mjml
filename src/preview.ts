@@ -127,7 +127,7 @@ export default class Preview {
 
     private getContent(document: TextDocument): string {
         const html: string = mjmlToHtml(
-            document.getText(),
+            this.wrapInMjmlTemplate(document.getText()),
             false,
             false,
             document.uri.fsPath,
@@ -141,6 +141,14 @@ export default class Preview {
         }
 
         return this.error("Active editor doesn't show a MJML document.")
+    }
+
+    private wrapInMjmlTemplate(documentText:string): string {
+        if(documentText.includes("<mjml>"))
+        {
+            return documentText;
+        }        
+        return "<mjml><mj-body>" + documentText + "</mj-body></mjml>";
     }
 
     private setBackgroundColor(html: string): string {
