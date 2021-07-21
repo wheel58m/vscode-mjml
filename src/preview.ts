@@ -144,11 +144,11 @@ export default class Preview {
     }
 
     private wrapInMjmlTemplate(documentText:string): string {
-        if(documentText.includes("<mjml>"))
-        {
-            return documentText;
-        }        
-        return "<mjml><mj-body>" + documentText + "</mj-body></mjml>";
+        if (documentText.trim().startsWith('<mjml')) {
+            return documentText
+        }
+
+        return "<mjml><mj-body>" + documentText + "</mj-body></mjml>"
     }
 
     private setBackgroundColor(html: string): string {
