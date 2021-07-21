@@ -11,11 +11,10 @@ import {
     window,
     workspace,
 } from 'vscode'
-
 import { fixImages, isMJMLFile, mjmlToHtml } from './helper'
 
 export default class Preview {
-    private openedDocuments: string[] = []
+    private openedDocuments: TextDocument[] = []
     private previewOpen: boolean = false
     private subscriptions: Disposable[]
     private webview: WebviewPanel | undefined
@@ -126,6 +125,10 @@ export default class Preview {
     }
 
     private getContent(document: TextDocument): string {
+        if (!workspace.getConfiguration('mjml').switchOnSeparateFileChange) {
+            document = this.openedDocuments[0] || document
+        }
+
         const html: string = mjmlToHtml(
             this.wrapInMjmlTemplate(document.getText()),
             false,
@@ -135,7 +138,7 @@ export default class Preview {
         ).html
 
         if (html) {
-            this.addDocument(document.fileName)
+            this.addDocument(document)
 
             return this.setBackgroundColor(fixImages(html, document.uri.fsPath))
         }
@@ -174,13 +177,15 @@ export default class Preview {
         return `<body>${error}</body>`
     }
 
-    private addDocument(fileName: string): void {
-        if (this.openedDocuments.indexOf(fileName) === -1) {
-            this.openedDocuments.push(fileName)
+    private addDocument(document: TextDocument): void {
+        if (this.openedDocuments.indexOf(document) === -1) {
+            this.openedDocuments.push(document)
         }
     }
 
     private removeDocument(fileName: string): void {
-        this.openedDocuments = this.openedDocuments.filter((file: string) => file !== fileName)
+        this.openedDocuments = this.openedDocuments.filter(
+            (file: TextDocument) => file.fileName !== fileName,
+        )
     }
 }
