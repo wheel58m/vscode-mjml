@@ -202,6 +202,11 @@
           "default": true,
           "description": "Automatically switch previews when editing a different file.",
           "type": "boolean"
+        },
+        "mjml.mjmlConfigPath": {
+          "default": "",
+          "description": "The path or directory of the .mjmlconfig (or .mjmlconfig.js) file (for custom components use)",
+          "type": "string"
         }
       }
     },
