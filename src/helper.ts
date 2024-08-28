@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, statSync } from 'fs'
-import { basename, dirname, join as joinPath, parse as parsePath } from 'path'
+import { basename, dirname, join as joinPath, parse as parsePath, isAbsolute } from 'path'
 import { TextDocument, TextEditor, window, workspace } from 'vscode'
 
 import { html as jsBeautify } from 'js-beautify'
@@ -27,6 +27,9 @@ export function renderMJML(
         activeTextEditor.document.getText(),
         minify !== undefined ? minify : workspace.getConfiguration('mjml').minifyHtmlOutput,
         beautify !== undefined ? beautify : workspace.getConfiguration('mjml').beautifyHtmlOutput,
+        undefined,
+        'skip',
+        workspace.getConfiguration('mjml').mjmlConfigPath,
     ).html
 
     if (content) {
@@ -53,6 +56,7 @@ export function mjmlToHtml(
     beautify: boolean,
     path?: string,
     validation: 'strict' | 'soft' | 'skip' = 'skip',
+    mjmlConfigPath?: string,
 ): { html: string; errors: any[] } {
     try {
         if (!path) {
@@ -63,7 +67,11 @@ export function mjmlToHtml(
             beautify,
             filePath: path,
             minify,
-            mjmlConfigPath: getCWD(path),
+            mjmlConfigPath: mjmlConfigPath
+                ? isAbsolute(mjmlConfigPath)
+                    ? mjmlConfigPath
+                    : joinPath(getCWD(path), mjmlConfigPath)
+                : getCWD(path),
             validationLevel: validation,
         })
     } catch (error) {
@@ -107,7 +115,7 @@ export function beautifyHTML(mjml: string): string | undefined {
 
         return beautified
     } catch (error) {
-        window.showErrorMessage(error)
+        window.showErrorMessage(error as string)
 
         return
     }

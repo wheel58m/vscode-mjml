@@ -84,6 +84,7 @@ export default class Linter {
                 false,
                 getPath(),
                 'strict',
+                workspace.getConfiguration('mjml').mjmlConfigPath
             ).errors
 
             if (errors && errors[0]) {
