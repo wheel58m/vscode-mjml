@@ -23,6 +23,10 @@ export function renderMJML(
         return
     }
 
+    // Extract CSS Variables from the MJML Content
+    const mjmlContent = activeTextEditor.document.getText()
+    const cssVariables = extractCssVariables(mjmlContent)
+
     let content: string = mjmlToHtml(
         activeTextEditor.document.getText(),
         minify !== undefined ? minify : workspace.getConfiguration('mjml').minifyHtmlOutput,
@@ -37,10 +41,43 @@ export function renderMJML(
             content = fixImages(content, getPath())
         }
 
+        // Replace CSS Variables in the HTML Output
+        content = replaceCssVariables(content, cssVariables)
+
         return cb(content)
     } else {
         window.showErrorMessage(`MJMLError: Failed to parse file ${basename(getPath())}`)
     }
+}
+
+// Function to extract CSS Variables from the MJML Content
+export function extractCssVariables(mjml: string): Record<string, string> {
+    const cssVariablesMap: Record<string, string> = {}
+
+    // Regular Expression to match CSS variables inside :root {}
+    const rootStyleMatch = mjml.match(/:root\s*{([^]+)}/)
+
+    if (rootStyleMatch && rootStyleMatch[1]) {
+        const rootStyle = rootStyleMatch[1]
+
+        // Extrat Variables and Their Values
+        rootStyle.split(';').forEach((style) => {
+            const [property, value] = style.split(':').map((str) => str.trim())
+            if (property && value && property.startsWith('--')) {
+                cssVariablesMap[property] = value
+            }
+        })
+    }
+
+    return cssVariablesMap
+}
+
+// Function to replace CSS Variables in the HTML Output
+export function replaceCssVariables(content: string, cssVariables: Record<string, string>): string {
+    return content.replace(/var\((--[\w-]+)\)/g, (match, variable) => {
+        // Look up the variable in the extracted cssVariables map, or return the original if not found
+        return cssVariables[variable] || match
+    })
 }
 
 export function isMJMLFile(document: TextDocument): boolean {
